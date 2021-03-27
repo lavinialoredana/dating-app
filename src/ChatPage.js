@@ -1,7 +1,7 @@
 import React from "react";
 import Message from "./Message"
-import myAvatar from './images/user1.png';
-import userAvatar from './images/user2.png';
+import myAvatar from './images/user1.jpg';
+import userAvatar from './images/user2.jpg';
 
 
 
