@@ -44,3 +44,71 @@ header h1 {
 }
 
 
+/* Profile styles */
+
+.profile-container{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 87px);
+}
+
+.profile-online-user {
+position: relative;
+width:fit-content;
+margin:auto
+}
+
+.profile-container img{
+  display: block;
+  margin:3vh 0 1em 0;
+  max-width: 400px;
+  max-height: 35vh;
+  
+  
+}
+
+.circle-img {
+  border-radius: 50%;
+}
+
+.online-status{
+  background-color: rgb(98, 226, 98);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  position:absolute;
+  top:20px;
+  right: -20px;
+
+}
+
+.profile-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1em;
+  
+}
+
+.fa-star{
+  font-size: 1.5em;
+  color: rgb(243, 237, 230);
+  
+}
+
+.profile-details span{
+  color: palevioletred;
+  font-size: small;
+  font-weight: bold;
+}
+
