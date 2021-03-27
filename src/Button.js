@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = (props) => {
 return (
-       <a href="#"> {props.content}</a>
+       <a href="#" className="button"> {props.content}</a>
 )
 
 }
