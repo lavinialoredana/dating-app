@@ -134,3 +134,25 @@ margin:auto
     #989898;
   background-blend-mode: multiply, multiply;
 }
+/* Chat Page styles */
+
+.chat-box-container {
+  /* the formula for getting the container height is: */
+  /* 100vh - 87px the header height */
+  min-height: calc(100vh - 87px);
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-message {
+  padding: 1rem 1.5rem;
+  border: none;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
