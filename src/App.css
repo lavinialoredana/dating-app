@@ -130,6 +130,14 @@ header h1 {
   background-blend-mode: multiply, multiply;
 }
 
+.send-button {
+  height: 48px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Chat Page styles */
 
 .chat-box-container {
@@ -172,6 +180,8 @@ input:focus {
 .new-message-wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .new-message-wrapper:after {
@@ -232,14 +242,20 @@ input:focus {
   top: 10vw;
 }
 
-
 /* different background when button is clicked */
 
-.different-background-profile{
- background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+.different-background-profile {
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
-.different-background-button{
-  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-
+.different-background-button {
+  background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #b465da 0%,
+    #cf6cc9 33%,
+    #ee609c 66%,
+    #ee609c 100%
+  );
 }
