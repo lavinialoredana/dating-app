@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 const ChatPage = () => {
   // Creating the messageRecord and the default message that comes up when the chat page opens
 
-  const [localStorageData, setLocalStorageData] = useState(null);
   const history = useHistory();
 
   const [messageRecord, setMessageRecord] = useState(
@@ -23,9 +22,6 @@ const ChatPage = () => {
         ]
   );
 
-  console.log("my message record", messageRecord);
-  console.log("message storage", sessionStorage);
-
   // Getting the value of the input everytime this changes
   const [inputValue, setInputValue] = useState("");
   const getInputValue = (event) => {
@@ -35,24 +31,18 @@ const ChatPage = () => {
   //  Creating the addNewMessage function to add new input messages to messageRecord
   //  Reseting setInputValue to none after pressing Send button
   const addNewMessage = () => {
-    setMessageRecord(
-      messageRecord.concat({
-        avatar: myAvatar,
-        message: inputValue,
-        isGuest: false,
-      })
-    );
+    const messages = messageRecord.concat({
+      avatar: myAvatar,
+      message: inputValue,
+      isGuest: false,
+    });
+    sessionStorage.setItem("messageStorage", JSON.stringify(messages));
+
+    setMessageRecord(messages);
     setInputValue("");
 
-    sessionStorage.setItem("messageStorage", JSON.stringify(messageRecord));
-    setLocalStorageData(JSON.parse(sessionStorage.getItem("messageStorage")));
     history.push("/chatpage");
   };
-
-  console.log(
-    "local storage data is:",
-    JSON.parse(sessionStorage.getItem("messageStorage"))
-  );
 
   return (
     <div className="chat-box-container">

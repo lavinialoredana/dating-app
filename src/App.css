@@ -132,7 +132,9 @@ header h1 {
 
 .send-button {
   height: 48px;
-  width: 65px;
+  width: 20%;
+  margin-left: 0.5rem;
+  min-width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
