@@ -9,33 +9,41 @@ import Button from './Button';
 
 const ChatPage = () => {
 
+  // Creating the messageRecord and the default message that comes up when the chat page opens
   const [ messageRecord, setMessageRecord ] = useState( [ {
     avatar: userAvatar,
     message: "Hey! Let's gor for a stroll, it's a lovely day!",
     isGuest: true
   }
   ])
-  
+
+  // Getting the value of the input everytime this changes 
+   const [inputValue, setInputValue] = useState("");
+   const getInputValue = (event) => {
+     setInputValue(event.target.value)
+   }
+
+
+  //  Creating the addNewMessage function to add new input messages to messageRecord 
+  //  Reseting setInputValue to none after pressing Send button
   const addNewMessage = () => {
     setMessageRecord(messageRecord.concat({
       avatar:myAvatar,
-      message: "Hey, that's a great idea!",
+      message: inputValue,
       isGuest: false
     }))
+    setInputValue("");
   }
 
-console.log("this is the MessageRecord", messageRecord)
 
 return (
 <div className="chat-box-container">
  <div className="chat-box">
    {messageRecord.map((message) => <Message img ={message.avatar} text ={message.message} user = {message.isGuest? "guest": "self"} /> ) }
-   {/* <Message img = {userAvatar} text ="Lorem ipsum scripta manet vorba volent scripta manet n'es pas?" user = "guest"  /> 
-   <Message img = {myAvatar} text ="Lorem ipsum smanent scripta?" user = "self" />  */}
  </div>
   
  <div className="new-message-wrapper">  
- <input className="new-message" type="text" placeholder="Write a message..." />
+ <input className="new-message" type="text" placeholder="Write a message..." onChange={getInputValue} value={inputValue}/>
  <Button content= "SEND" buttonHandler ={addNewMessage}/>
 </div>
 </div>
