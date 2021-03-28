@@ -5,16 +5,15 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-
 }
 
-body{
+body {
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 p {
-  font-size: 0.9em;
-  line-height: 1.3em;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
 }
 
 link,
@@ -27,7 +26,7 @@ a {
 header {
   display: flex;
   align-items: center;
-  padding: 1.5em;
+  padding: 1.5rem;
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.15) 0%,
@@ -46,41 +45,40 @@ header h1 {
 }
 
 .fa-chevron-left {
-  font-size: 2em;
+  font-size: 2rem;
 }
-
 
 /* Profile styles */
 
-.profile-container{
-  padding: 1em;
+.profile-container {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* the formula for getting the container height is: */
+  /* 100vh - 87px the header height */
   height: calc(100vh - 87px);
 }
 
 .profile-online-user {
-position: relative;
-width:fit-content;
-margin:auto
+  position: relative;
+  width: fit-content;
+  margin: auto;
 }
 
-.profile-container img{
+.profile-container img {
   display: block;
-  margin:3vh 0 1em 0;
+  margin: 3vh 0 1rem 0;
   max-width: 400px;
   max-height: 35vh;
-  
-  
 }
 
 .circle-img {
   border-radius: 50%;
 }
 
-.online-status{
+.online-status {
   background-color: rgb(98, 226, 98);
   color: rgb(255, 255, 255);
   text-transform: uppercase;
@@ -90,29 +88,26 @@ margin:auto
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8em;
-  position:absolute;
-  top:20px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 20px;
   right: -20px;
-
 }
 
-.profile-details{
+.profile-details {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 1em;
-  
+  margin-bottom: 1rem;
 }
 
-.fa-star{
-  font-size: 1.5em;
+.fa-star {
+  font-size: 1.5rem;
   color: rgb(243, 237, 230);
-  
 }
 
-.profile-details span{
+.profile-details span {
   color: palevioletred;
   font-size: small;
   font-weight: bold;
@@ -120,20 +115,21 @@ margin:auto
 
 /* Button Styles */
 
-.button{
+.button {
   width: 100%;
   text-align: center;
   color: rgb(243, 237, 230);
-  padding: 1.5em 0;
+  padding: 1.5rem 0;
   background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(0, 0, 0, 0.15) 100%
-  ),
-  radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%)
-    #989898;
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%)
+      #989898;
   background-blend-mode: multiply, multiply;
 }
+
 /* Chat Page styles */
 
 .chat-box-container {
@@ -156,3 +152,82 @@ input:focus {
   outline: none;
 }
 
+/* Chat Message styles */
+
+.message-box {
+  position: relative;
+  display: flex;
+}
+
+.message-box:after,
+.new-message-wrapper:after {
+  content: "";
+  border-color: transparent;
+  border: solid transparent;
+  border-width: 0.8rem;
+  position: absolute;
+  top: 0px;
+}
+
+.new-message-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.new-message-wrapper:after {
+  border-top-color: white;
+  left: -0.8em;
+}
+.message-box.guest-message:after {
+  border-top-color: rgb(67, 217, 243);
+  right: calc(13vw - 0.3rem);
+}
+
+.message-box.self-message:after {
+  border-top-color: white;
+  left: calc(13vw - 0.3rem);
+}
+
+.message-box.guest-message {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.message-box.self-message {
+  justify-content: flex-start;
+}
+
+.message-box img {
+  width: 13vw;
+  height: 13vw;
+}
+
+.message-box p {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  /* the formula for getting the text width is: */
+  /* 100vw - 2x pic 13vw - 2x 1em padding - 2x0.5em for pic margin */
+  width: calc(100vw - 26vw - 3rem);
+  min-height: 13vw;
+  display: flex;
+  align-items: center;
+}
+
+.message-box.guest-message p {
+  background-color: rgb(67, 217, 243);
+  margin: 0 0.5rem 1.5rem 0;
+  color: white;
+}
+
+.message-box.self-message p {
+  margin: 0 0 1.5rem 0.5rem;
+}
+
+.online-chat-status {
+  background-color: rgb(98, 226, 98);
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 10vw;
+}
