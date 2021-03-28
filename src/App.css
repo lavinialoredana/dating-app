@@ -145,7 +145,7 @@ header h1 {
 .new-message {
   padding: 1rem 1.5rem;
   border: none;
-  width: 100%;
+  width: 80%;
 }
 
 input:focus {

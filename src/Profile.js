@@ -21,7 +21,12 @@ const Profile = () => {
   const userLocation = "New York";
   const userDescription =
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error nihil porro accusantium totam dolorum consectetur tempore repellat id debitis placeat.";
-  return (
+  
+    const changeColours = () => {
+      setButtonActioned(!buttonActioned)
+    }
+
+    return (
     //  To change the background colour on click I simulate an if statement.
     //  If buttonActioned === true then I set the different-background class.
     //  Else no change
@@ -50,7 +55,7 @@ const Profile = () => {
 
         <p>{userDescription}</p>
         </div>
-      <Button content="ADD AS FRIEND"  buttonHandler={setButtonActioned}  buttonActioned={buttonActioned}/>
+      <Button content="ADD AS FRIEND"  buttonHandler={changeColours}  buttonActioned={buttonActioned}/>
     </div>
     
   );
